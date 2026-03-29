@@ -8,4 +8,4 @@ RUN dotnet publish -c Release -o /app
 FROM mcr.microsoft.com/dotnet/aspnet:10.0
 WORKDIR /app
 COPY --from=build /app .
-ENTRYPOINT ["dotnet", "Ekos.Api.w?dll"]
+ENTRYPOINT ["dotnet", "Ekos.Api.dll"]
