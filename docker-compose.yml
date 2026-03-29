@@ -12,6 +12,14 @@ services:
     networks: 
       - ekos-network
 
+  visual-terminal:
+    build:
+      context: ./infra
+      dockerfile: ./dockerfile.terminal
+    networks:
+      - ekos-network
+    depends_on:
+      - enterprise-role-management
 networks:
   ekos-network:
 
