@@ -12,25 +12,20 @@ services:
     build:
       context: ./Ekos.Api
       dockerfile: ./Dockerfile
-    ports:
-      - "5000:8080"
-    environment:
-      ASPNETCORE_ENVIRONMENT: Development
-      ASPNETCORE_URLS: http://+:8080
-    restart: always
-    networks: 
+    networks:
       - ekos-network
 
   visual-terminal:
     build:
       context: ./infra
       dockerfile: ./dockerfile.terminal
+    ports:
+      - "8081:8081"
     networks:
       - ekos-network
-    depends_on:
-      - enterprise-role-management
 networks:
   ekos-network:
+    driver: bridge
 
  
 
