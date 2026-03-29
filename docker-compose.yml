@@ -1,0 +1,5 @@
+services:
+  enterprise-role-management:
+    build:
+      context: ./Ekos.Api
+      dockerfile: ./Dockerfile
